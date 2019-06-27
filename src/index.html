@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Webpack + Vue + CSS Modules</title>
+    <link
+      rel="stylesheet"
+      href="<%= htmlWebpackPlugin.files.chunks.app.css %>"
+    />
+  </head>
+  <body>
+    <div id="app" class="app">
+      <hello></hello>
+    </div>
+
+    <script src="<%= htmlWebpackPlugin.files.chunks.app.entry %>"></script>
+  </body>
+</html>
