@@ -1,3 +1,7 @@
 :global(.app) {
   font-size: 30px;
 }
+
+.example {
+  /* for debugging */
+}

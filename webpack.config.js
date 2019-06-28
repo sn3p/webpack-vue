@@ -23,9 +23,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
+        loader: "babel-loader"
       },
       {
         test: /\.vue$/,
@@ -33,13 +31,12 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        exclude: /node_modules/,
         oneOf: [
-          // This matches `<style module>` (used in Vue components)
+          // This matches `<style module>`
           {
             resourceQuery: /module/,
             use: [
-              "vue-style-loader",
+              // "vue-style-loader",
               MiniCssExtractPlugin.loader,
               {
                 loader: "css-loader",
@@ -53,7 +50,6 @@ module.exports = {
           },
           // This matches all other styles
           {
-            test: /\.css$/,
             use: [
               "style-loader",
               MiniCssExtractPlugin.loader,
@@ -72,16 +68,16 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new VueLoaderPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "[name].css"
+    }),
     new HtmlWebpackPlugin({
       inject: false,
       hash: true,
       template: "./src/index.html",
       filename: "index.html"
-    }),
-    new MiniCssExtractPlugin({
-      filename: "[name].css"
-    }),
-    new VueLoaderPlugin()
+    })
   ],
   devServer: {
     port: 8080,
