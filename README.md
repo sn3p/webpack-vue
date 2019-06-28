@@ -2,7 +2,7 @@
 
 Attempting to get [vue-loader](https://github.com/vuejs/vue-loader) and [postcss-modules](https://github.com/css-modules/postcss-modules) to play nice together, instead of using the `modules: true` option of [css-loader](https://github.com/webpack-contrib/css-loader#modules).
 
-For more in-depth information see this [question on Stack Overflow](https://stackoverflow.com/a/56807121/949258).
+For more in-depth information see this [question on Stack Overflow](https://stackoverflow.com/q/56798379/949258).
 
 ### Usage
 
